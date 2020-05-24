@@ -1,0 +1,271 @@
+@import config
+
+// CUSTOM USER STYLES & IMPORTS
+section, header
+    position: relative
+    background-size: cover
+    background-position: center
+
+section 
+    background-color: #fff
+    &.inverse
+        color: #fff
+        background: #1a1a1a
+        &.s-call
+            background-size: contain
+            background-repeat: no-repeat
+            background-color: #fff
+            background-position: 25%
+            &::before
+                content: ''
+                width: 50%
+                right: 0
+                height: 100%
+                position: absolute
+                background-color: rgba($accent, .8)
+    .h2
+        font-size: 30px
+        font-weight: 800
+        white-space: nowrap
+        span
+            color: $accent
+
+.h1, .h2, .h3, .h4, .h5, .h6
+    line-height: 1.4
+    text-transform: uppercase 
+
+.site-header
+    min-height: 700px
+    height: 100vh
+    color: #fff
+
+.top-line
+    padding-top: 40px
+    position: absolute
+    width: 100%
+    z-index: 1
+
+.logo img
+    width: 80px
+    height: auto
+    margin-left: 45px
+    
+.mail
+    position: absolute
+    right: 85px
+    top: 44px
+    font-family: FiraSans, sans-serif
+    font-size: 22px
+    white-space: nowrap
+    color: #fff
+    transition: color .25s ease
+    &:hover
+        color: $accent
+        text-decoration: none
+        .fa-envelope
+            color: #fff
+
+.fas
+    color: $grey
+    font-size: 20px
+    margin-right: 5px
+
+.fas.fa-users
+    color: #fff
+
+body.mm-wrapper_opened //scroll!!!    Start MMENU
+    overflow-y: scroll
+
+.mm-panels              //scroll!!!
+    right: -18px
+
+.mm-wrapper.mm-wrapper_opened.mm-wrapper_blocking.mm-wrapper_background.mm-wrapper_opening
+    background-color: #000
+
+.hamburger
+    position: absolute
+    right: 0
+    top: 34px
+    
+    .hamburger-box
+        width: 34px
+        
+        .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+            border-radius: 0
+            width: 34px
+            height: 2px
+            background-color: #fff
+
+.mm-navbar
+    min-height: 115px
+    border: none
+
+.mm-navbar__title >span>img
+    width: 128px
+    height: auto
+
+.mm-listitem:after
+    border: none
+
+.mm-menu a, .mm-menu a:active, .mm-menu a:hover, .mm-menu a:link, .mm-menu a:visited .mm-listitem_selected>.mm-listitem__text
+    background-color: transparent
+    color: $accent
+
+.mm-listview>li>a
+    padding: 
+        top: 8px
+        left: 15%
+    transition: color .25s ease
+    &::before
+        content: '\f058'
+        font-family: 'Font Awesome 5 Free'
+        margin-right: 8px
+        font-size: 12px
+
+.button 
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $accent
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	
+	&:after 
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($accent, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	
+	&:focus, &:hover 
+		text-decoration: none
+		color: #fff
+	
+	&:hover 
+		background-color: lighten($accent, 5%)
+		&::after 
+			opacity: .22
+	
+	&:active 
+		background-color: darken($accent, 5%)
+		&::after 
+			opacity: .32
+		
+.button-white 
+    background-color: #fff
+    color: #444
+    &:hover, &:focus
+        color: #444
+        background-color: lighten(#000, 90%)
+    
+.header-flex
+    display: flex
+    height: 100%
+    position: relative
+    top: 0
+
+.flex-centre
+    margin: auto
+
+.header-composition
+    text-align: center
+    position: relative
+    p
+        margin-top: 40px
+    .button
+        margin-top: 25px
+
+.welcome
+    p
+        font-size: 14px
+        text-transform: uppercase
+        display: flex
+        align-items: center
+        white-space: nowrap
+        margin: 0
+        span 
+            margin: 0 10px
+        &::before, &::after
+            content: ''
+            height: 1px
+            width: 100%
+            position: relative
+            background-color: #fff
+            display: inline-block
+    .h1
+        font-weight: 100
+        font-size: 70px
+        margin: 0
+        line-height: 1.6
+        border-bottom: 1px solid #fff
+        white-space: nowrap
+    strong
+        display: block
+        text-transform: uppercase
+        font-size: 17px
+        margin-top: 25px
+        .fa
+            margin-right: 10px
+            font-size: 12px
+            color: #555
+            &:last-child
+                margin-left: 10px
+                margin-right: inherit
+                
+.header-social
+    position: absolute
+    display: flex
+    right: 0
+    height: 100%
+    top: 0
+    border-left: rgba(#fff, .1) 1px solid
+
+.soc
+    margin: auto
+    ul
+        margin: 0
+        padding: 0
+        list-style-type: none
+        li
+            padding: 0 12.5px
+            text-align: center
+            margin: 15px 0
+            a
+                color: $grey
+                font-size: 17px
+                transition: color .25s ease
+                &:hover
+                    color: rgba(#fff, .8)
+
+.fa-facebook-square, .fa-instagram-square, .fa-youtube-square
+    font-size: 40px
+
+.header-contacts
+    position: absolute
+    bottom: 0
+    left: 0
+    border-top: rgba(#fff, .15) 1px solid
+    padding: 12.5px 0
+    width: 100%
+    background-color: rgba(#151515, .25)
+
+.contact
+    font-family: Firasans, sans-serif
+    text-align: center
+
