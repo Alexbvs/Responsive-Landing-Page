@@ -286,3 +286,85 @@ body.mm-wrapper_opened //scroll!!!    Start MMENU
         border-radius: 4em
         text-align: justify
         margin-bottom: 40px
+
+$colors: $accent, $blue, $red           //colors bloc in carousel
+@for $i from 1 through length($colors)
+    .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+        background-color: nth($colors, $i)
+
+.carousel-services
+    &-item
+        color: #fff
+        font-size: 18px
+        position: relative
+        font-weight: 300      
+    &-content
+        display: flex
+        flex-direction: column-reverse
+        
+        &:hover
+            .carousel-services-image
+                opacity: 1
+    &-composition
+        padding: 60px 10%
+        margin: auto
+        text-align: center
+        width: 100%
+        .h3
+            font-weight: 800
+            font-size: 28px
+            margin-top: 5px
+            margin-bottom: 20px
+            span
+                font-size: 18px
+                font-weight: 300
+                display: block
+    &-list
+        margin: 0
+        padding: 0
+        list-style: none
+        margin-bottom: 25px
+        li
+            padding: 9px
+            border-bottom: 1px solid rgba(#000, .12)
+            &:last-child
+                border-bottom: 0
+            strong
+                font-family: firasans, sans-serif
+                color: #4a4a4a 
+                .fa-dollar-sign, .fa-percent
+                    color: #4a4a4a
+                    font-size: 15px
+    .carousel-logo
+        text-align: center
+        img
+            width: 100px
+            height: auto
+            display: inline-block
+    .owl-item
+        &:nth-child(2n+2)
+            .carousel-services-content
+                flex-direction: column
+    &-image
+        background-size: cover
+        background-position: center
+        opacity: .8
+        transition: opacity .5s ease
+    
+    .owl-nav
+        position: absolute
+        top: 0
+        width: 100%
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev
+            width: 61px
+            height: 61px
+            background-color: #fff
+            color: #000
+            position: absolute
+            text-align: center
+            font-size: 26px
+            outline: none
+.owl-prev
+    left: 0
+.owl-next
+    right: 0
