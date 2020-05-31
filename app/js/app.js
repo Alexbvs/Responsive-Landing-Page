@@ -49,4 +49,40 @@ $(function() {
 				ths.find('.carousel-services-image').css('min-height', thsh);
 		});
 	} carouselService();
+
+	$('.reviews').owlCarousel({
+		loop: true,
+		items: 1,
+		smartSpeed: 700,
+		responsiveClass: true,
+		responsive: {
+			0:{
+				autoHeight: true
+			}, 500: {
+				autoHeight: false
+			}
+		}
+	});
+
+	$('.partners').owlCarousel({
+		loop: true,
+		items: 4,
+		smartSpeed: 700,
+		dots: false,
+		autoplay: true,
+    	autoplayTimeout: 2000,
+		autoplayHoverPause: true,
+		responsiveClass: true,
+		responsive: {
+			0: {
+				items: 1
+			}, 768: {
+				items: 2
+			}, 992: {
+				items: 3
+			}, 1200: {
+				items: 4
+			},
+		}
+	});
 })

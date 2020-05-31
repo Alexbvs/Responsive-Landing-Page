@@ -27,7 +27,10 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^5.13.0",
+		"fotorama": "^4.6.4",
 		"hamburgers": "^1.1.3",
 		"jquery.equalheights": "^1.5.3",
+		"owl.carousel": "^2.3.4",
+		"selectize": "^0.12.6"
 	}
 }
