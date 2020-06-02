@@ -655,3 +655,164 @@ select
     transition: opacity .5s ease
     &:hover
         opacity: 1
+
+.top
+    position: fixed
+    bottom: 25px
+    right: -100px
+    background-color: #e0e0e0
+    z-index: 12
+    border-radius: 1em
+    color: #666
+    font-size: 26px
+    width: 50px
+    height: 50px
+    text-align: center
+    line-height: 50px
+    cursor: pointer
+    transition: all .3s ease
+    opacity: .6
+    .fas
+        margin-right: 0
+        color: #ffffff
+        font-size: 20px
+    &:hover
+        color: #fff
+        background-color: $accent
+        opacity: 1
+    
+.top.active
+    right: 25px
+
+//Preloader
+@mixin opasity($opasity)
+    opacity: $opasity / 100
+    filter: alpha(opasity = $opasity)
+
+.preloader
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 100
+    background-color: #000
+    .pulse
+        position: relative
+        left: 50%
+        top: 50vh
+        margin: -75px 0 0 -75px
+        &::before, &::after
+            content: ''
+            border: 5px solid #fff
+            width: 150px
+            height: 150px
+            border-radius: 500px
+            position: absolute
+        &::before
+            animation: pulse-outer .8s ease-in infinite
+        &::after 
+            animation: pulse-inner .8s linear infinite
+@keyframes pulse-outer
+    0%
+        @include opasity(100)
+    50%
+        @include opasity(50)            
+    100%
+        @include opasity(0)
+@keyframes pulse-inner
+    0%
+        @include opasity(0)
+        transform: scale(0)         
+    100%
+        @include opasity(100)
+        transform: scale(1)
+
+// /*==========  Desktop First  ==========*/
+
+// /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+    .welcome
+        .h1
+            font-size: 62px
+    .header-contacts
+        font-size: 15px
+    .s
+        &-king, &.review, &.partners
+            padding: 8% 0
+    .social-footer
+        margin-top: 10px
+    .footer-menu
+        ul
+            li
+                margin-bottom: 3px
+    .footer-adrr
+        margin-bottom: 10px
+        .footer-phone
+            font-size: 18px
+        .fas.fa-envelope
+            top: 3px
+        
+// /* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+    .welcome
+        .h1
+            font-size: 46px
+    .carousel-services-content
+        flex-direction: column
+    
+    section.inverse.s-call
+        &::before
+            width: 100%
+        .callback
+            padding: 12% 0
+    .footer-adrr
+        margin-bottom: 0
+        .footer-phone
+            font-size: 16px
+    .footer-menu
+        a
+            padding-bottom: 2px
+        ul
+            li
+                margin: 0
+    .social-footer
+        margin-top: 33px  
+
+// /* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+    .phone-h
+        text-align: left
+    .quotes
+        display: none
+    section
+        .h-first
+            font-size: 20px
+        .review-header
+            font-size: 20px
+    .footer-adrr
+        margin-bottom: 35px
+    
+// /* Extra Small Devices, Phones */
+@media only screen and (max-width : 576px)
+    .phone-h
+        text-align: left
+    .welcome
+        .h1
+            font-size: 28px
+        p
+            span
+                font-size: 9px
+        strong
+            font-size: 15px
+    .header-composition
+        p
+            font-size: 14px
+    .s-king
+        .h2
+            font-size: 25px
+    .social-footer
+        margin-top: 0
+    .s-about-line
+        .h2
+            font-size: 20px

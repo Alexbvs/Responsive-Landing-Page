@@ -15,7 +15,6 @@ let paths = {
 			"node_modules/owl.carousel/dist/owl.carousel.min.js",
 			"node_modules/jquery.equalheights/jquery.equalheights.min.js",
 			"node_modules/fotorama/fotorama.js",
-			"node_modules/selectize/dist/js/standalone/selectize.min.js",
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',
